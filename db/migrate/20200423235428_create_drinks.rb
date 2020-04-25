@@ -4,7 +4,7 @@ class CreateDrinks < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :image
       t.float :price
-      t.string :types
+      t.string :category
 
       t.timestamps
     end
