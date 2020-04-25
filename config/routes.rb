@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
   resources :drink_orders
-  resources :drinks
-  resources :orders
-  resources :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :drinks, only: [:index]
+  resources :orders, only: [:create]
+  resources :users, only: [:index, :create]
+
+  post "/users/history", to: "users#history"
+  post "/login", to: "users#login"
+  get "/persist", to: "users#persist"
+  
 end
