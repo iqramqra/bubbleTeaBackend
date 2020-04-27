@@ -1,26 +1,70 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Switch, Route, withRouter} from 'react-router-dom'
+import NavBar from './components/NavBar'
+import Home from './components/Home'
+import RegisterForm from './components/RegisterForm'
+import LoginForm from './components/LoginForm'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  state = {
+    drinks: [],
+    token: ""
+  }
+
+  componentDidMount() {
+    if (localStorage.token) {
+      fetch("http://localhost:3000/persist", {
+        headers: {
+          "Authorization": `Bearer ${localStorage.token}`
+        }
+      })
+      .then(r => r.json())
+      .then(this.handleResponse)
+    }
+
+    fetch("https://localhost:3000/drinks")
+      .then(r=> r.json())
+      .then((drinksArray) => {
+        this.setState({
+          drinks: drinksArray
+        })
+      })
+  }
+
+  handleResponse = (response) => {
+    if (response.user) {
+      localStorage.token = response.token
+      this.setState(response, () => {
+        this.props.history.push("/menu")
+      })
+    } else {
+      alert(response.error)
+    }
+  }
+
+  renderRegisterForm = () => {
+    return <RegisterForm handleSubmit={this.handleRegister}/>
+  }
+
+  renderLoginForm = () => {
+    return <LoginForm handleSubmit={this.handleLogin}/>
+  }
+
+  render(){
+    return(
+      <div className="App">
+        <NavBar/>
+        <Switch>
+          <Route path="/login" render={ this.renderLoginForm } />
+          <Route path="/register" render={ this.renderRegisterForm } />
+          <Route path="/menu" render={ this.renderMenu } />
+          <Route path="/" exact render={() => <Home /> } />
+          <Route render={ () => <p>Page not Found</p> } />
+        </Switch>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default withRouter(App)  ;
