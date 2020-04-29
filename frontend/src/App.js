@@ -1,9 +1,10 @@
 import React from 'react';
-import {Switch, Route, withRouter} from 'react-router-dom'
+import { Switch, Route, withRouter } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import RegisterForm from './components/RegisterForm'
 import LoginForm from './components/LoginForm'
+import MenuContainer from './containers/MenuContainer'
 
 class App extends React.Component {
 
@@ -44,11 +45,15 @@ class App extends React.Component {
   }
 
   renderRegisterForm = () => {
-    return <RegisterForm handleSubmit={this.handleRegister}/>
+    return <RegisterForm handleRegister={this.handleRegister}/>
   }
 
   renderLoginForm = () => {
-    return <LoginForm handleSubmit={this.handleLogin}/>
+    return <LoginForm handleLogin={this.handleLogin}/>
+  }
+
+  renderMenu = () => {
+    return <MenuContainer drinks={this.state.drinks}/>
   }
 
   render(){

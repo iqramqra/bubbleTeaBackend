@@ -9,7 +9,7 @@ class RegisterForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.handleSubmit(this.state)
+    this.props.handleRegister(this.state)
   }
 
   handleChange = (e) => {
