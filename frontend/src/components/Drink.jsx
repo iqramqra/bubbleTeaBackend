@@ -10,7 +10,7 @@ class Drink extends React.Component {
            <div className="drink-card">
                <h3>{name}</h3>
                <img src={image} alt={name} />
-               <p>{price}</p>
+               <p>${price}</p>
                <button>Add to Order</button>
            </div>
         )

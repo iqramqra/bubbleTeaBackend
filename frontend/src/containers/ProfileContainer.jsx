@@ -6,7 +6,8 @@ class ProfileContainer extends Component {
 
         return (
             <div className="profile">
-                <h2>Hello</h2>
+                <h2>Welcome back, {this.props.user.username}!</h2>
+                <h5>Past Orders:</h5>
             </div>
         );
     }

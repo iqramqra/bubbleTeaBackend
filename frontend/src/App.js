@@ -10,6 +10,7 @@ import ProfileContainer from './containers/ProfileContainer'
 class App extends React.Component {
 
   state = {
+    user: "",
     drinks: [],
     token: ""
   }

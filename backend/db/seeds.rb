@@ -8,10 +8,10 @@
 
 user1 = User.create(username: "asdf", password: "asdf")
 
-drink1 = Drink.create(name: "Taro Milk Tea", image: "https://i.imgur.com/JsUXIzO.png", price: 4.25, category: "Milk Tea")
-drink2 = Drink.create(name: "Coffee Milk Tea", image: "https://i.imgur.com/gczMsDz.png", price: 4.25, category: "Milk Tea")
-drink3 = Drink.create(name: "Red Bean Slush", image: "https://i.imgur.com/aejDGD9.png", price: 4.75, category: "Slush")
-drink4 = Drink.create(name: "Mango Slush", image: "https://i.imgur.com/i1cSU5d.png", price: 4.75, category: "Slush")
-drink5 = Drink.create(name: "Passion Fruit Green Tea", image: "https://i.imgur.com/OyzWyUY.png", price: 4.50, category: "Tea")
+drink1 = Drink.create(name: "Taro Milk Tea", image: "https://i.imgur.com/rSrjATY.png", price: 4.25, category: "Milk Tea")
+drink2 = Drink.create(name: "Coffee Milk Tea", image: "https://i.imgur.com/nLPhAiM.png", price: 4.25, category: "Milk Tea")
+drink3 = Drink.create(name: "Red Bean Slush", image: "https://i.imgur.com/JAMNB6H.png", price: 4.75, category: "Slush")
+drink4 = Drink.create(name: "Mango Slush", image: "https://i.imgur.com/xgdoKhs.png", price: 4.75, category: "Slush")
+drink5 = Drink.create(name: "Passion Fruit Green Tea", image: "https://i.imgur.com/7hHqwgI.png", price: 4.50, category: "Tea")
 
 puts "All Done!"
