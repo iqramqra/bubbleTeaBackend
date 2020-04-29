@@ -4,7 +4,6 @@ import Drink from '../components/Drink'
 class MenuContainer extends Component {
 
     render() {
-
         let drinkComponentArray = this.props.drinks.map(drink => {
             return (
                 <Drink 
