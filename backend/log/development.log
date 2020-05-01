@@ -1798,3 +1798,1022 @@ Completed 401 Unauthorized in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocati
 Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 2042)
 
 
+Started GET "/users" for ::1 at 2020-05-01 00:23:34 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Started GET "/persist" for ::1 at 2020-05-01 00:23:34 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:23:34 -0400
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:6:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (28.39ms)
+Completed 200 OK in 78ms (Views: 51.6ms | ActiveRecord: 21.8ms | Allocations: 14616)
+
+
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (8.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (11.65ms)
+Completed 200 OK in 30ms (Views: 13.5ms | ActiveRecord: 8.8ms | Allocations: 5017)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.72ms)
+Completed 200 OK in 87ms (Views: 28.7ms | ActiveRecord: 54.1ms | Allocations: 10269)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:27:10 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:27:10 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (3.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 3.7ms | Allocations: 2009)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.88ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 3.5ms | Allocations: 4098)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:27:37 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:27:37 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.74ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 1877)
+
+
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.14ms)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 2.6ms | Allocations: 4020)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:28:12 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:28:12 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (2.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.26ms)
+[active_model_serializers]   [1m[36mOrder Load (4.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (8.7ms)
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 4.6ms | Allocations: 3961)
+
+
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 2.6ms | Allocations: 2473)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:28:40 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:28:40 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (3.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (2.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.54ms)
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.69ms)
+Completed 200 OK in 14ms (Views: 7.3ms | ActiveRecord: 3.3ms | Allocations: 3959)
+
+
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 3.7ms | Allocations: 3484)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:28:44 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:28:44 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.16ms)
+[active_model_serializers]   [1m[36mOrder Load (5.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.7ms | Allocations: 2475)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (13.12ms)
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 7.6ms | Allocations: 4422)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:29:08 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:29:08 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDrink Load (1.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (2.9ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 1.5ms | Allocations: 2445)
+
+
+[active_model_serializers]   [1m[36mOrder Load (4.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (9.46ms)
+Completed 200 OK in 16ms (Views: 5.6ms | ActiveRecord: 5.1ms | Allocations: 4148)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:29:42 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:29:42 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 0.7ms | Allocations: 2311)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.26ms)
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.5ms | Allocations: 4020)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:29:46 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:29:46 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.58ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.7ms | Allocations: 2718)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.82ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:29:52 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:29:52 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 3453)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.35ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.9ms | Allocations: 4252)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:31:16 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:31:16 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (1.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.19ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.2ms | Allocations: 3888)
+
+
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 1.4ms | Allocations: 3682)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:31:50 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:31:50 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.6ms | Allocations: 2718)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.56ms)
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:31:55 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:31:55 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (3.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.75ms)
+[active_model_serializers]   [1m[36mOrder Load (1.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 3.1ms | Allocations: 3072)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.61ms)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 2.3ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:32:05 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:32:05 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.64ms)
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.8ms | Allocations: 2308)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.04ms)
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 2.5ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:32:48 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:32:48 -0400
+Processing by UsersController#persist as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Processing by DrinksController#index as */*
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.27ms)
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 2783)
+
+
+  [1m[36mDrink Load (1.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.7ms | Allocations: 3025)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:34:11 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:34:11 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (1.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 1.1ms | Allocations: 3484)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.4ms)
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 1.3ms | Allocations: 4144)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:34:44 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:34:44 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.61ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms | Allocations: 3484)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.96ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.7ms | Allocations: 4335)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:34:47 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:34:47 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (1.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (2.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 1.7ms | Allocations: 3484)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.41ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 3.1ms | Allocations: 4148)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:35:15 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:35:15 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (1.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+[active_model_serializers]   [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.8ms | Allocations: 2471)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.4ms)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 2.6ms | Allocations: 4102)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:36:37 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:36:37 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 3484)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.36ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.2ms | Allocations: 4148)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:36:54 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:36:54 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.8ms | Allocations: 3484)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.3ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 2.4ms | Allocations: 4102)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:36:59 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:36:59 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.67ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 2718)
+
+
+[active_model_serializers]   [1m[36mOrder Load (2.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.17ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 2.3ms | Allocations: 4019)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:38:00 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:38:00 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (1.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 1.7ms | Allocations: 2475)
+
+
+[active_model_serializers]   [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.38ms)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 2.5ms | Allocations: 4148)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:38:04 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:38:04 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (2.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.73ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 2.5ms | Allocations: 3453)
+
+
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 1.3ms | Allocations: 4142)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:38:34 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:38:34 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1907)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.31ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 2.1ms | Allocations: 4019)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:38:40 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:38:40 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.6ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.63ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.6ms | Allocations: 2718)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.19ms)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 4019)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:40:33 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:40:33 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.8ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.5ms | Allocations: 2909)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.62ms)
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 1.2ms | Allocations: 4002)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:45:13 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:45:13 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 2445)
+
+
+[active_model_serializers]   [1m[36mOrder Load (1.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.44ms)
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 2.3ms | Allocations: 4148)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:51:47 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:51:47 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.8ms | Allocations: 1742)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.85ms)
+Completed 200 OK in 10ms (Views: 3.8ms | ActiveRecord: 1.9ms | Allocations: 4312)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:51:54 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:51:54 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.73ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.8ms | Allocations: 1925)
+
+
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.33ms)
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 3.4ms | Allocations: 4073)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 00:52:28 -0400
+Started GET "/persist" for ::1 at 2020-05-01 00:52:28 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (1.1ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.08ms)
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.1ms | Allocations: 2063)
+
+
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (10.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (12.66ms)
+Completed 200 OK in 19ms (Views: 2.8ms | ActiveRecord: 14.4ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 00:58:23 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 00:58:23 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.97ms)
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.7ms | Allocations: 7612)
+
+
+[active_model_serializers]   [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.58ms)
+Completed 200 OK in 28ms (Views: 6.0ms | ActiveRecord: 5.7ms | Allocations: 16442)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:00:09 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:00:09 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.7ms | Allocations: 3046)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.87ms)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 1.4ms | Allocations: 4002)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:00:22 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:00:22 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.7ms | Allocations: 2495)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.34ms)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 1.2ms | Allocations: 4019)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 01:00:35 -0400
+Started GET "/persist" for ::1 at 2020-05-01 01:00:35 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.53ms)
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms | Allocations: 2304)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.68ms)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.5ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:01:22 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:01:22 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+[active_model_serializers]   [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 2475)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.0ms)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 2.4ms | Allocations: 4148)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:02:05 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:02:05 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+[active_model_serializers]   [1m[36mOrder Load (1.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.8ms | Allocations: 2471)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.24ms)
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 2.8ms | Allocations: 4472)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 01:02:57 -0400
+Started GET "/persist" for ::1 at 2020-05-01 01:02:57 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms | Allocations: 1923)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.32ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 2.7ms | Allocations: 4072)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:04:09 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:04:09 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1907)
+
+
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (14.9ms)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 1.9ms | Allocations: 4022)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:04:33 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:04:33 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (1.2ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 1.2ms | Allocations: 2718)
+
+
+[active_model_serializers]   [1m[36mOrder Load (2.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.87ms)
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 4.2ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:04:44 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:04:44 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.59ms)
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.5ms | Allocations: 2300)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.2ms)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 1.4ms | Allocations: 4140)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 01:05:24 -0400
+Started GET "/persist" for ::1 at 2020-05-01 01:05:24 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (1.9ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.52ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.9ms | Allocations: 2719)
+
+
+[active_model_serializers]   [1m[36mOrder Load (1.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.35ms)
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 2.5ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:06:15 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:06:15 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.71ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.5ms | Allocations: 1903)
+
+
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.76ms)
+Completed 200 OK in 7ms (Views: 1.9ms | ActiveRecord: 2.7ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:06:22 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:06:22 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (1.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.68ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.8ms | Allocations: 3580)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.51ms)
+Completed 200 OK in 10ms (Views: 4.7ms | ActiveRecord: 2.0ms | Allocations: 4488)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:06:32 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:06:32 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mDrink Load (4.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.23ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.88ms)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 4.8ms | Allocations: 3683)
+
+
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 2.1ms | Allocations: 3889)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:06:46 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:06:46 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.85ms)
+[active_model_serializers]   [1m[36mOrder Load (3.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 2446)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.96ms)
+Completed 200 OK in 9ms (Views: 3.3ms | ActiveRecord: 3.9ms | Allocations: 4144)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:07:26 -0400
+Processing by UsersController#persist as */*
+Started GET "/drinks" for ::1 at 2020-05-01 01:07:26 -0400
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Processing by DrinksController#index as */*
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+  [1m[36mDrink Load (1.0ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.05ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 1.6ms | Allocations: 4547)
+
+
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.0ms | Allocations: 2836)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:13:42 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:13:42 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (2.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 2.3ms | Allocations: 2586)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.18ms)
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 1.8ms | Allocations: 4767)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 01:14:06 -0400
+Started GET "/persist" for ::1 at 2020-05-01 01:14:06 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mDrink Load (0.8ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (1.41ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.8ms | Allocations: 2488)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.49ms)
+Completed 200 OK in 12ms (Views: 4.2ms | ActiveRecord: 4.1ms | Allocations: 4199)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 01:15:02 -0400
+Started GET "/persist" for ::1 at 2020-05-01 01:15:02 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (2.4ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.55ms)
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 2.4ms | Allocations: 3484)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.66ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.9ms | Allocations: 4144)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 01:15:12 -0400
+Started GET "/persist" for ::1 at 2020-05-01 01:15:12 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDrink Load (0.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.83ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 2445)
+
+
+[active_model_serializers]   [1m[36mOrder Load (3.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.03ms)
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 4.1ms | Allocations: 4148)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:15:27 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:15:27 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.57ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 2093)
+
+
+[active_model_serializers]   [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (2.07ms)
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 2.2ms | Allocations: 4019)
+
+
+Started GET "/drinks" for ::1 at 2020-05-01 01:17:13 -0400
+Started GET "/persist" for ::1 at 2020-05-01 01:17:13 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (3.3ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers]   [1m[36mOrder Load (1.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.82ms)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 3.3ms | Allocations: 3484)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.68ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 2.5ms | Allocations: 4481)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:17:28 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:17:28 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.62ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 2445)
+
+
+[active_model_serializers]   [1m[36mOrder Load (5.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (6.95ms)
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 5.6ms | Allocations: 4144)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:17:42 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:17:42 -0400
+Processing by DrinksController#index as */*
+Processing by UsersController#persist as */*
+  [1m[36mDrink Load (0.5ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.56ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms | Allocations: 2470)
+
+
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+[active_model_serializers]   [1m[36mOrder Load (2.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.41ms)
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 3.4ms | Allocations: 4019)
+
+
+Started GET "/persist" for ::1 at 2020-05-01 01:18:38 -0400
+Started GET "/drinks" for ::1 at 2020-05-01 01:18:38 -0400
+Processing by UsersController#persist as */*
+Processing by DrinksController#index as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `logged_in_user'
+  [1m[36mDrink Load (2.7ms)[0m  [1m[34mSELECT "drinks".* FROM "drinks"[0m
+  ↳ app/controllers/drinks_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.6ms)
+[active_model_serializers]   [1m[36mOrder Load (2.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 2.7ms | Allocations: 2471)
+
+
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:23:in `persist'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (4.52ms)
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 3.1ms | Allocations: 4148)
+
+
