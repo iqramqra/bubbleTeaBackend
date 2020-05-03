@@ -11,10 +11,4 @@ class OrdersController < ApplicationController
         render json: @new_order
     end
 
-    private
-
-    def order_params
-        params.permit(:drink_id, :size, :topping)
-    end
-
 end
