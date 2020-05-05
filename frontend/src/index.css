@@ -35,3 +35,13 @@ ul.nav li a {
 ul.nav li a:hover {
   background-color: #1A9670;
 }
+
+.menu{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} 
+
+.spacing{
+  margin: 1em;
+}
