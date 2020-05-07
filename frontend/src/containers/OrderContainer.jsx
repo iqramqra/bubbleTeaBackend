@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import Order from '../components/Order'
+import { NavLink } from 'react-router-dom'
 
 class OrderContainer extends Component {
+
+    handleClick = () => {
+        const drink_ids = this.props.orders.map(drink => drink.id)
+        fetch("http://localhost:3000/orders",{
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "Authorization": `bearer ${this.props.token}`
+            },
+            body: JSON.stringify({
+                drink_ids: drink_ids
+            })
+        })
+    }
 
     render() {
 
@@ -18,12 +33,14 @@ class OrderContainer extends Component {
             )
         })
 
-
         return (
             <div className="cart">
                 <h3>Orders:</h3>
                 {orderComponentArray}
                 <h4>Total: ${totalSum}</h4>
+                <NavLink to="/profile">
+                    <button onClick={this.handleClick}>Create Order</button>
+                </NavLink>
             </div>
         );
     }

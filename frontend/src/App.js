@@ -33,6 +33,7 @@ class App extends React.Component {
           drinks: drinksArray
         })
       })
+
   }
 
   handleResponse = (response) => {
@@ -79,7 +80,7 @@ class App extends React.Component {
   }
 
   renderMenu = () => {
-    return <MenuContainer drinks={this.state.drinks}/>
+    return <MenuContainer drinks={this.state.drinks} token={this.state.token}/>
   }
 
   renderProfile = () => {

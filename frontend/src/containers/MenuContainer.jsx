@@ -16,7 +16,6 @@ class MenuContainer extends Component {
     }
 
     render() {
-        console.log(this.state.orders)
         let drinkComponentArray = this.props.drinks.map(drink => {
             return (
                 <Drink 
@@ -31,7 +30,10 @@ class MenuContainer extends Component {
             <div className="menu">
                 <h2>Drinks Menu</h2>
                 {drinkComponentArray}
-                <OrderContainer orders={this.state.orders}/>
+                <OrderContainer 
+                    orders={this.state.orders}
+                    token={this.props.token}
+                />
             </div>
         );
     }

@@ -1,5 +1,10 @@
 class OrdersController < ApplicationController
-    before_action :authorized, only: [:create
+    before_action :authorized, only: [:create]
+
+    def index
+        @orders = Order.all
+        render json: @orders
+    end
     
     def create
         @new_order = Order.create(user: @user)
