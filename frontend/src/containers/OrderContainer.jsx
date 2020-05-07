@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Order from '../components/Order'
-import { NavLink } from 'react-router-dom'
 
 class OrderContainer extends Component {
 
@@ -38,9 +37,9 @@ class OrderContainer extends Component {
                 <h3>Orders:</h3>
                 {orderComponentArray}
                 <h4>Total: ${totalSum}</h4>
-                <NavLink to="/profile">
-                    <button onClick={this.handleClick}>Create Order</button>
-                </NavLink>
+                <button onClick={this.handleClick}>
+                    Place Order
+                </button>
             </div>
         );
     }
