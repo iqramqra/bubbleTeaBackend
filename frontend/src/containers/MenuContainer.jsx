@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Drink from '../components/Drink'
 import OrderContainer from './OrderContainer'
+import { Grid, Segment } from 'semantic-ui-react'
 
 class MenuContainer extends Component {
 
@@ -26,15 +27,24 @@ class MenuContainer extends Component {
             )
         })
 
-        return (
-            <div className="menu">
-                <h2>Drinks Menu</h2>
-                {drinkComponentArray}
-                <OrderContainer 
-                    orders={this.state.orders}
-                    token={this.props.token}
-                />
-            </div>
+        return (            
+            <Grid columns='equal'>
+                {/* <Grid.row/> */}
+                <Grid.Column/>
+                <Grid.Column width={8}>
+                    <Segment>
+                        <div className='menu'>
+                            {drinkComponentArray}
+                        </div>
+                    </Segment>
+                </Grid.Column>
+
+                <Grid.Column>
+                    <Segment>
+                            <OrderContainer orders={this.state.orders} token={this.props.token}/>
+                    </Segment>
+                </Grid.Column>
+            </Grid>
         );
     }
 

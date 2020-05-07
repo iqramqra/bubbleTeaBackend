@@ -10,20 +10,22 @@ class Drink extends React.Component {
     render() {
         let {name, image, price} = this.props.drink
         return (
-            <Card>
-                <Image src={image} wrapped ui={true} />
-                <Card.Content>
-                <Card.Header>{name} | ${price}</Card.Header>
-                </Card.Content>
-                <Card.Content extra>
-                    <Button animated='vertical' onClick={this.handleClick}>
-                        <Button.Content hidden>Add</Button.Content>
-                        <Button.Content visible>
-                            <Icon name='shop' />
-                        </Button.Content>
-                    </Button>
-                </Card.Content>
-            </Card> 
+            <div className='spacing'>
+                <Card>
+                        <Image src={image} wrapped ui={true} />
+                        <Card.Content>
+                        <Card.Header>{name} | ${price}</Card.Header>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <Button animated='vertical' onClick={this.handleClick}>
+                                <Button.Content hidden>Add</Button.Content>
+                                <Button.Content visible>
+                                    <Icon name='shop' />
+                                </Button.Content>
+                            </Button>
+                        </Card.Content>
+                </Card> 
+            </div>
         )
     }
 }
