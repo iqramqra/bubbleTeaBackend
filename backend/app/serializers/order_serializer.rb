@@ -1,4 +1,4 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :username
   has_many :drink_orders
 end

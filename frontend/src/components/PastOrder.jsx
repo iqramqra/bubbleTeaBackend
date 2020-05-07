@@ -4,7 +4,7 @@ import { Card, Image } from 'semantic-ui-react'
 class PastOrder extends React.Component {
 
     render() {
-        let {name, image, price} = this.props.order.drink
+        let {name, image, price} = this.props.drink
         return (
             <div>
                 <Card>

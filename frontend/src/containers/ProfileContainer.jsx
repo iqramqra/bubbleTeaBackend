@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PastOrder from '../components/PastOrder'
+import PastOrderContainer from './PastOrderContainer'
 
 class ProfileContainer extends Component {
 
@@ -8,11 +8,11 @@ class ProfileContainer extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/drink_orders")
+        fetch("http://localhost:3000/orders")
         .then(r=> r.json())
         .then((ordersArray) => {
             let filteredArray = ordersArray.filter(order => {
-                return order.user === this.props.user.username
+                return order.username === this.props.user.username
             })
             this.setState({
                 orders: filteredArray.reverse()
@@ -23,12 +23,14 @@ class ProfileContainer extends Component {
     render() {
         let pastOrderComponentArray = this.state.orders.map(order => {
             return (
-                <PastOrder 
+                <PastOrderContainer
                     key={order.id} 
                     order={order} 
                 />
             )
         })
+
+        console.log(this.state.orders)
 
         return (
             <div className="profile">

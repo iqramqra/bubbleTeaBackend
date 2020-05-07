@@ -1,4 +1,4 @@
 class DrinkOrderSerializer < ActiveModel::Serializer
-  attributes :id, :drink_id, :order_id, :topping, :size, :user
+  attributes :id, :order_id, :drink
   belongs_to :drink
 end
