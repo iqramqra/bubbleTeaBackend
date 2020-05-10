@@ -16,4 +16,9 @@ class OrdersController < ApplicationController
         render json: @new_order
     end
 
+    def destroy
+        # @delete_order = Order.find()
+        # @delete_order.destroy
+
+    end
 end
