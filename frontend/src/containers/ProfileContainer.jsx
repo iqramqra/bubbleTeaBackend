@@ -30,8 +30,6 @@ class ProfileContainer extends Component {
             )
         })
 
-        console.log(this.state.orders)
-
         return (
             <div className="profile">
                 <h2>Welcome back, {this.props.user.username}!</h2>
